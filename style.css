@@ -1,0 +1,806 @@
+/* ----------Desktopt---------- */
+@font-face {
+  font-family: 'Ligconsolata';
+  src: url('fonts/Ligconsolata.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: 'Ligconsolata', monospace;
+  font-size: 50px;
+  color: #000;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #F9599C;
+}
+
+.bold {
+  font-weight: bold;
+}
+.regular {
+  font-weight: normal;
+}
+
+/*Index-Seite */
+/* Container für das Bild Champagner */
+.bild-container {
+  position: absolute;
+  top: 15%; /* etwas Abstand nach oben */
+  right: -7.5%;
+  width: 40%; /* 1/3 der Breite */
+  height: 70%; /* z.B. 70% der Höhe */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  pointer-events: none; /* Optional: Bild ist nicht anklickbar */
+}
+/* Bild selbst */
+.bild-container img {
+  max-width: 600%;
+  max-height: 130%;
+  object-fit: contain;
+  display: block;
+  width: 60%vw; /* Breite auf 60% der Viewport-Breite */
+  opacity: 0.5;
+  transform: scaleX(1.2); /* Breite 1.2x skalieren */
+  z-index: 1000;
+}
+/* Container für die Sprechblase */
+.sprechblase-container {
+  position: absolute;
+  top: 10%;
+  left: 7%;
+  width: 65%;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Sprechblase */
+.sprechblase {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  padding: 40px;
+  box-shadow: 10px rgba(0, 0, 0, 0.2);
+  border-radius: 78px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+/* Text */
+.sprechblase p {
+  margin: 0;
+  font-size: 128px;
+  line-height: 1.1;
+  word-break: break-word;
+}
+/* Geometrischer "Schwanz" */
+.sprechblase::after
+{
+  content: '';
+  position: absolute;
+  bottom: -100px; 
+  left: 12%;
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-top: 100px solid #ffffff; /* Höhe des Dreiecks */
+  
+}
+
+/*Agerequest-Seite und Too-young-Seite */
+/* Container für die Sprechblase KLEIN */
+.sprechblaseklein-container {
+  position: absolute;
+  top: 10%;                  /* vertikale Position bleibt */
+  left: 50%;                 /* horizontaler Mittelpunkt */
+  transform: translateX(-50%); /* nur horizontal zentrieren */
+  width: 70%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Sprechblase KLEIN */
+.sprechblaseklein {
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  padding: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 900px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000;
+  font-family: 'Ligconsolata', monospace;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: normal;
+}
+/* Text in der Sprechblase */
+.sprechblaseklein p {
+  margin: 0;
+  font-size: 40px;
+  line-height: normal;
+}
+/* Geometrischer "Schwanz" */
+.sprechblaseklein::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: 250px;
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-top: 100px solid #FFF;
+}
+#versatz-links {
+  left: 38%; /* z.B. von 7% auf 3% verschoben */
+}
+.custom-button {
+  position: absolute;
+  bottom: 60px;
+  right: 20%;
+  display: flex;
+  width: 510px;
+  height: 120px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  text-decoration: none;
+  border: none;
+  border-radius: 60px;
+  background: #FFF;
+  color: #000;
+  font-family: 'Inconsolata', monospace;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+.custom-button:hover {
+  background-color: #FFB2D2;
+}
+#animatedBtn {
+  animation: bounceInUp 1.2s ease-out both;
+  animation-delay: 0.3s;
+}
+@keyframes bounceInLeft {
+  0% {
+      transform: translateX(-150%) scale(0.8);
+      opacity: 0;
+  }
+  60% {
+      transform: translateX(30px) scale(1.05);
+      opacity: 1;
+  }
+  80% {
+      transform: translateX(-10px) scale(0.98);
+  }
+  100% {
+      transform: translateX(0) scale(1);
+  }
+}
+@keyframes bounceInUp {
+  0% {
+      transform: translateY(150%) scale(0.8);
+      opacity: 0;
+  }
+  60% {
+      transform: translateY(-30px) scale(1.05);
+      opacity: 1;
+  }
+  80% {
+      transform: translateY(10px) scale(0.98);
+  }
+  100% {
+      transform: translateY(0) scale(1);
+  }
+}
+/* Sprechblase-Container: Bounce-in from left */
+.sprechblase-container {
+  animation: bounceInLeft 1.2s ease-out both;
+}
+
+/* Mode-Seite */
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: auto;
+  margin-top: 50px;
+  width: 80vw;
+}
+/* Zeile mit Bild + Button */
+.button-row {
+  display: flex;
+  align-items: center;
+  gap: 100px; /* Abstand zwischen Bild und Button */
+}
+/* Bild neben dem Button */
+.side-image {
+  width: 180px;      /* Anpassbare Breite */
+  height: 210px;
+  object-fit: contain;
+  align-items: center;
+  flex-basis: 1;
+  flex-shrink: 0;
+}
+
+/* Button-Stil wie zuvor */
+.mode-button {
+  /* width: 945px;
+  height: 159px; */
+  border: none;
+  border-radius: 47px;
+  background: #FFF;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 60px;
+  transition: background-color 0.3s ease;
+  text-align: left;
+  width: 100%;
+  padding: 50px 50px;
+}
+.mode-button p {
+  margin: 0;
+  font-size: 50px;
+  font-family: 'Ligconsolata', monospace;
+  color: #000;
+}
+
+.mode-button:hover {
+  background-color: #FFB2D2;
+}
+.button-link {
+  text-decoration: none;
+  display: inline-block;
+}
+button-wrapper-klein {
+  position: relative;
+  height: 400px; /* Beispielhöhe für den Bereich */
+  width: 100%;
+}
+.choice-button {
+  position: absolute;
+  bottom: 90px;
+  display: flex;
+  width: 166px;
+  height: 117px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 15px;
+  background: #FFF;
+  cursor: pointer;
+  text-decoration: none; 
+}
+.choice-button p {
+  margin: 0;
+  font-size: 50px;
+  font-weight: normal;
+  color: black;
+}
+/* Positionierung individuell steuern */
+#yes-button {
+  left: 20%;
+}
+#no-button {
+  left: 60%;
+}
+.choice-button:hover {
+  background-color: #FFB2D2;
+  transition: background-color 0.3s ease;
+}
+/* Container für das Hanzeichen-Bild */
+.image-container-Hanzeichenklein {
+  position: relative;
+  width: 100%;  /* Breite des Containers */
+  height: 100vh; /* Oder eine andere Höhe, die du benötigst */
+}
+.right-image {
+  width: 458.941px;
+  height: 706.849px;
+  position: absolute;
+  right: 5%;  /* Positioniert das Bild auf der rechten Seite */
+  top: 50%;  /* Zentriert das Bild vertikal */
+  transform: translateY(-50%);  /* Korrektur für exakte vertikale Mitte */
+  opacity: 0.7;
+}
+
+
+
+/* Game Karten */
+.game-container {
+position: relative; /* NEU */
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+min-height: 100vh;
+padding-top: 80px; /* nach oben verschoben */
+gap: 50px; /* Abstand zwischen Karte und Buttons */
+}
+.card {
+width: 480px;
+height: 420px; /* kleiner gemacht */
+background: #FFF;
+border-radius: 78px;
+padding: 30px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: top;
+}
+/* Neue Karte überlagert leicht versetzt */
+.new-card {
+position: absolute;
+top: 40px;
+left: 30%; /* nach links verschoben */
+z-index: 10;
+background: #FFF;
+animation: flyInBounce 1.25s ease-out forwards;
+transition: transform 0.3s ease-in-out;
+width: 480px; /* gleiche Breite wie .card */
+height: 420px;
+border-radius: 78px;
+padding: 30px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start; /* linksbündig */
+gap: 15px;
+text-align: left;
+}
+.new-card h1 {
+font-size: 45px;
+margin: 0;
+line-height: 1.2;
+padding-top: 10px;
+}
+.design-strich {
+width: 100%; /* füllt Container */
+height: 17px;
+border-radius: 40px;
+background: #F9599C;
+margin: 5px 0;
+}
+#question {
+font-size: 30px;
+margin: 0;
+width: 100%;
+word-wrap: break-word;
+line-height: 1.4;
+text-align: justify; /* 👈 Blocksatz */
+}
+/* Animation  */
+@keyframes flyInBounce {
+0% {
+  transform: translate(-300px, -300px) scale(0.8) rotate(-10deg);
+}
+50% {
+  transform: translate(30px, 30px) scale(1.05) rotate(3deg);
+}
+70% {
+  transform: translate(-8px, -8px) scale(0.98) rotate(-1.5deg);
+}
+85% {
+  transform: translate(4px, 4px) scale(1.01) rotate(1deg);
+}
+100% {
+  transform: translate(0px, 0px) scale(1) rotate(0deg);
+}
+}
+
+/* Buttons unter der Karte */
+.buttons {
+display: flex;
+justify-content: space-between;
+width: 90%;          /* <- genug Platz */
+max-width: 1000px;   /* <- nicht zu schmal! */
+margin: 40px auto 0 auto;
+}
+.choice-button-NHIE {
+display: flex;
+width: 402px;
+height: 121px;
+padding: 10px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+flex-shrink: 0;
+border: none;
+border-radius: 60px;
+background: #FFF;
+color: #000;
+font-family: 'Ligconsolata', monospace;
+font-size: 42px;
+font-weight: bold;
+cursor: pointer;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+transition: background-color 0.3s ease;
+}
+.choice-button-NHIE:hover {
+background-color: #FFB2D2;
+}
+
+/* Neue unabhängige Karte */
+.info-card {
+position: relative;
+left: 120px; /* nach links verschoben */
+background: #FFF;
+width: 600px; /* breiter für Text + Bild */
+height: 450Px;
+border-radius: 78px;
+padding: 20px 40px;
+margin-top: 70Px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+display: flex;
+flex-direction: row; /* Text links, Bild rechts */
+align-items: flex-start; /* linksbündig */
+gap: 30px;
+}
+/* Linker Bereich mit Text */
+.info-card .text-content {
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start; /* ❗ Text linksbündig */
+}
+.info-card .text-content h1 {
+font-size: 30px;
+text-align: left;
+}
+/* Trennlinie */
+.info-card .design-strich {
+width: 100%;
+height: 17px;
+border-radius: 40px;
+background: #F9599C;
+margin: 0 0 20px 0;
+}
+/* Fließtext */
+.info-card .text-content p {
+font-size: 45px;
+margin: 0;
+line-height: 1.3;
+text-align: left;
+}
+/* Bild bleibt unverändert */
+.info-card img {
+width: 50%;
+height: auto;
+object-fit: contain;
+border-radius: 20px;
+}
+
+.layout-wrapper {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+gap: 60px;
+margin-left: 80px;
+}
+/* info-card bleibt wie bisher */
+.vertical-diagram {
+display: flex;
+align-items: flex-end;
+height: 400px;
+  position: absolute;
+  top: 120px;       /* weiter nach oben (je kleiner, desto weiter oben) */
+  right: 300px;     /* weiter nach rechts */
+}
+.diagram-outer {
+width: 150px;         /* Balkenbreite */
+height: 440px;
+background-color: #FDFDFD;
+border-radius: 60px;
+overflow: hidden;
+position: relative;
+box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.diagram-fill {
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 0%; /* Start with 0% height */
+background-color: #FFB2D2;
+border-radius: 60px 60px 0 0;
+overflow: hidden; /* Ensure the filling stays inside the container */
+transition: height 1s ease; /* Smooth transition for height */
+}
+
+
+/* Responsive Styles */
+/* Mobile styles (600px) */
+@media (max-width: 1024px) {
+  /* INDEX-Seite */
+/* Container für das Bild Champagner */
+body{
+align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.bild-container {
+top: 10%;
+right: -100px;
+width: 100%;
+height: auto;
+justify-content: center;
+}
+.bild-container img {
+max-width: 80%;
+max-height: auto;
+width: auto;
+transform: scaleX(1);
+opacity: 0.3;
+}
+/* MODE-Seite */
+/* Container für die Sprechblase */
+.sprechblase-container {
+width: 80%;
+height: 600px; /* Höher für mehr Textfluss */
+left: 5%;
+top: -4%;
+}
+.sprechblase {
+width: 90%;
+height: 400px;
+padding: 20px;
+border-radius: 40px;
+}
+.sprechblase p {
+font-size: 80px; /* Kleiner für mobile Lesbarkeit */
+}
+.sprechblase::after {
+bottom: -80px;
+left: 100px;
+border-left: 40px solid transparent;
+border-right: 40px solid transparent;
+border-top: 100px solid #ffffff;
+}
+.custom-button {
+width: 60%;              /* deutlich schmaler */
+height: 80px;            /* kleiner in der Höhe */
+font-size: 28px;         /* kleinere Schrift */
+bottom: 70px;            /* näher am unteren Rand */  
+transform: translateX(-50%); /* tatsächliche Zentrierung */
+align-items: center; /* zentriert den Text */
+}
+.button-wrapper {
+margin: 40px auto;
+padding: 0 20px;
+gap: 20px;
+align-items: center;
+}
+.button-row {
+flex-direction: column;
+gap: 20px;
+}
+.mode-button {
+width: 375px;
+height: auto;
+padding: 30px;
+border-radius: 30px;
+text-align: center;
+justify-content: center;
+}
+.mode-button p {
+font-size: 25px;
+}
+.side-image {
+width: 100px;
+height: auto;
+}
+
+/* Agereguest-Seite */
+  /* Container der Sprechblase */
+  /* Container der Sprechblase */
+  .sprechblaseklein-container {
+    top: 5%;
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+  /* Sprechblase */
+  .sprechblaseklein {
+    padding: 20px;
+    border-radius: 30px;
+    font-size: 28px;
+    height: auto;
+  }
+  .sprechblaseklein p {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+  /* Schwanz der Sprechblase */
+  .sprechblaseklein::after {
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 100px solid #FFF;
+  }
+  /* Button Wrapper fix unten im Bildschirm */
+  .button-wrapper-klein {
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    z-index: 999;
+  }
+  .choice-button {
+    width: 100px;
+    height: 60px;
+    border-radius: 12px;
+    font-size: 18px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .choice-button p {
+    font-size: 28px;
+    margin: 0;
+  }
+  #yes-button, #no-button {
+    left: auto;
+    position: static;
+  }
+
+  /* Tooyoung */
+  #versatz-links {
+    left: 50%; 
+  }
+.right-image {
+  width: 60%;
+  height: auto;
+}
+.custom-button {
+  width: 60%;
+  height: 80px;
+  font-size: 28px;
+  bottom: 70px;
+  transform: translateX(-0%); 
+  align-items: center;
+}
+
+/* Game-Seite */
+
+/* Hintere Karte */
+.card {
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+/* Vordere Karte leicht links oben darüber */
+.new-card {
+  position: absolute;
+  left: -0%; /* weiter nach links */
+  width: 80%;
+  height: 30%;
+  align-items: center;
+  gap: 12px;
+}
+.new-card h1 {
+  font-size: 26px;
+  text-align: center;
+  margin: 0;
+}
+.design-strich {
+  height: 6px;
+  width: 100%;
+  border-radius: 20px;
+  background: #F9599C;
+}
+#question {
+  font-size: 20px;
+  line-height: 1.4;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+/* Button-Container weiter unten */
+.buttons {
+  margin-top: 150px; /* Abstand von den Karten */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.choice-button-NHIE {
+  width: 200px;
+  height: 60px;
+  font-size: 28px;
+  border-radius: 30px;
+  background: #FFF;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/*Show-results-Seite */
+  /* Karte: zentriert, schmaler, stacked Layout */
+  .info-card {
+    flex-direction: column;
+    width: 80%;
+    height: 20%;
+    margin: 60px auto 0 auto;
+    padding: 20px;
+    border-radius: 40px;
+    gap: 20px;
+    align-items: center;
+    left:0;
+  }
+  /* Text innerhalb der Karte zentriert */
+  .info-card .text-content {
+    align-items: center;
+    text-align: center;
+  }
+  .info-card .text-content h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+  .info-card .text-content p {
+    font-size: 28px;
+    text-align: center;
+  }
+  .info-card .design-strich {
+    height: 10px;
+    margin: 15px 0;
+  }
+  .info-card img {
+    width: 30%;
+    align-self: center;
+  }
+  /* Layout-Wrapper nicht als Row sondern stacked */
+  .layout-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-left: 0;
+  }
+  /* Vertikales Diagramm zentriert unterhalb */
+  .vertical-diagram {
+    position: static;
+    align-items: center;
+    height: auto;
+  }
+  .diagram-outer {
+    width: 75px;
+    height: 220px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1384px) {
+  .vertical-diagram {
+    display: none;
+  }
+}

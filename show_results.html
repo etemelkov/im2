@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auswertung</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout-wrapper">
+    
+    <!-- Karte mit Text und Bild -->
+    <div class="info-card">
+      <div class="text-content">
+        <h1><span class="regular">YOU'RE ...</span> 
+        </h1>
+        
+        <div class="design-strich"></div>
+        <p id="result-text"><span class="bold">80% WARMED-</span> <br>
+          <span class="bold">UP</span>
+        </p>
+      </div>
+      <img id="result-image" src="img/Arm_pink.png" alt="Bild">
+    </div>
+
+    <!-- Vertikales Balkendiagramm -->
+    <div class="vertical-diagram">
+      <div class="diagram-outer">
+        <div class="diagram-fill" id="result-diagram"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="button-wrapper">
+    <a href="mode.html" id="next-button" class="custom-button">PLAY AGAIN</a> 
+
+
+    <script src="show_results.js" type="module"></script>
+
+</body>
+</html>
