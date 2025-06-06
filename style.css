@@ -751,9 +751,9 @@ height: auto;
   .info-card {
     flex-direction: column;
     width: 80%;
-    height: 20%;
+    height: 0%;
     margin: 60px auto 0 auto;
-    padding: 20px;
+    padding: 5px;
     border-radius: 40px;
     gap: 20px;
     align-items: center;
@@ -777,7 +777,7 @@ height: auto;
     margin: 15px 0;
   }
   .info-card img {
-    width: 30%;
+    width: 25%;
     align-self: center;
   }
   /* Layout-Wrapper nicht als Row sondern stacked */
@@ -795,7 +795,7 @@ height: auto;
   }
   .diagram-outer {
     width: 75px;
-    height: 220px;
+    height: 190px;
   }
 }
 
