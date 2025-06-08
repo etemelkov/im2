@@ -1,3 +1,4 @@
+
 /* ----------Desktopt---------- */
 @font-face {
   font-family: 'Ligconsolata';
@@ -12,7 +13,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #F9599C;
+  background-color: #f9599c;
 }
 
 .bold {
@@ -163,7 +164,6 @@ body {
   border-radius: 60px;
   background: #FFF;
   color: #000;
-  font-family: 'Inconsolata', monospace;
   font-size: 50px;
   font-weight: bold;
   text-align: center;
@@ -413,6 +413,7 @@ text-align: justify; /* 👈 Blocksatz */
 }
 }
 
+
 /* Buttons unter der Karte */
 .buttons {
 display: flex;
@@ -444,6 +445,8 @@ transition: background-color 0.3s ease;
 .choice-button-NHIE:hover {
 background-color: #FFB2D2;
 }
+
+
 
 /* Neue unabhängige Karte */
 .info-card {
@@ -564,29 +567,28 @@ opacity: 0.3;
 width: 80%;
 height: 600px; /* Höher für mehr Textfluss */
 left: 5%;
-top: -4%;
+top: -7%;
 }
 .sprechblase {
 width: 90%;
-height: 400px;
+height: 350px;
 padding: 20px;
 border-radius: 40px;
 }
 .sprechblase p {
-font-size: 80px; /* Kleiner für mobile Lesbarkeit */
+font-size: 60px; /* Kleiner für mobile Lesbarkeit */
 }
 .sprechblase::after {
-bottom: -80px;
+bottom: -45px;
 left: 100px;
 border-left: 40px solid transparent;
 border-right: 40px solid transparent;
 border-top: 100px solid #ffffff;
 }
-.custom-button {
-width: 60%;              /* deutlich schmaler */
+.custom-button {          
 height: 80px;            /* kleiner in der Höhe */
 font-size: 28px;         /* kleinere Schrift */
-bottom: 70px;            /* näher am unteren Rand */  
+bottom: 50px;            /* näher am unteren Rand */  
 transform: translateX(-50%); /* tatsächliche Zentrierung */
 align-items: center; /* zentriert den Text */
 }
@@ -682,16 +684,13 @@ height: auto;
 }
 .custom-button {
   width: 60%;
-  height: 80px;
+  height: 8%;
   font-size: 28px;
-  bottom: 70px;
   transform: translateX(-0%); 
   align-items: center;
 }
 
-/* Game-Seite */
-
-/* Hintere Karte */
+/* Game-Seite */ /* Hintere Karte */
 .card {
   width: 300px;
   height: 300px;
@@ -795,7 +794,7 @@ height: auto;
   }
   .diagram-outer {
     width: 75px;
-    height: 190px;
+    height: 180px;
   }
 }
 
